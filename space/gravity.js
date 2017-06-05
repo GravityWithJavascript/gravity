@@ -93,9 +93,9 @@ var Space = class {
     $(".sy").html(LocateYdt[this.i]);
   }
 
-}
+};
 
-$('.info').tooltip({html: true})
+$('.info').tooltip({html: true});
 var Space = new Space();
 function start(){
   SunM = parseInt($("#m1").val());
@@ -119,6 +119,6 @@ function start(){
     Space.Move();
     Space.Text();
     Space.i++;
-  },1)
+  },1);
 
 }
