@@ -120,3 +120,11 @@ function start(){
   },1);
 
 }
+
+$(window).resize(function(){
+  var initInfo = {
+    'left' : parseInt($("#sun").css("left").replace(/[^-\d\.]/g, '')),
+    'top' : parseInt($("#sun").css("top").replace(/[^-\d\.]/g, '')) + 30
+  };
+  initFunction();
+});
