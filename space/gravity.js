@@ -8,8 +8,6 @@ var EarthR = 6.37 * Math.pow(10, 6);
 var SunM = 1.989 * Math.pow(10,30);
 
 var LocateXdt= [], LocateYdt= [], VX= [], VY= [], AX= [], AY= [];
-
-
 LocateXdt[0] = 147500000000;
 LocateYdt[0] = 0;
 
