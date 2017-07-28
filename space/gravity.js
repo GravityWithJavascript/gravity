@@ -116,7 +116,15 @@ function start(){
     Space.Position();
     Space.Move();
     Space.Text();
-    Space.i++;
+    Space.i=0;
+    AX.shift();
+    AY.shift();
+    F.shift();
+    distance.shift();
+    LocateXdt.shift();
+    LocateYdt.shift();
+    VX.shift();
+    VY.shift();
   },1);
 
 }
