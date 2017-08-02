@@ -20,6 +20,18 @@
   </head>
   <body>
 
+    <div id="help" class="container">
+      <div class="container align-middle">
+        <h1>HELP</h1>
+        <p>태양을 기준으로 지구가 회전합니다.</p>
+        <p>각각 위치는 드래그해서 조절이 가능합니다.</p>
+        <p>플래시를 사용하지 않고, 직접 움직이는 방식이기에 드래그시 다소 버벅거림이 발생할 수 있습니다.</p>
+        <p>화면을 넘어서 객체가 이동한 경우 드래그가 가능합니다.</p>
+        <p>Copyright gdb.kr all reserved.</p>
+        <input type="checkbox" name="reopen" value="">다시보지 않기
+        <p onclick="closePopup();">닫기</p>
+      </div>
+    </div>
     <div id="info">
       <p>Acceleration (x) : <span class="ax"></span>m/s<sup>2</sup></p>
       <p>Acceleration (y) : <span class="ay"></span>m/s<sup>2</sup></p>
@@ -76,9 +88,11 @@
     <div id="wrap">
       <!-- 1,391,400km -->
       <img data-toggle="tooltip" class="info" id="sun" src="img/sun.jpeg" title="Sun">
+      <img data-toggle="tooltip" class="info" id="sun2" src="img/sun.jpeg">
       <!-- 12,742km -->
       <img data-toggle="tooltip" class="info" id="earth" src="img/earth.jpg" title="Earth">
     </div>
+
 
 
     <script src="gravity.js"></script>

@@ -23,8 +23,8 @@ AY[0] = F[0] * LocateYdt[0] * -1;
 AX[0] = F[0] * LocateXdt[0] * -1;
 
 var initInfo = {
-  'left' : parseInt($("#sun").css("left").replace(/[^-\d\.]/g, '')),
-  'top' : parseInt($("#sun").css("top").replace(/[^-\d\.]/g, '')) + 30
+  'left' : $("#sun").position().left,
+  'top' : $("#sun").position().top + 30
 };
 
 
@@ -80,6 +80,7 @@ var Space = class {
   Move(){
     $("#earth").css('left', initInfo['left'] + LocateXdt[this.i]/400000000);
     $("#earth").css('top', initInfo['top'] - LocateYdt[this.i]/400000000);
+    checksize(initInfo['left'] + LocateXdt[this.i]/400000000, initInfo['top'] - LocateYdt[this.i]/400000000);
   }
 
   Text(){
@@ -96,6 +97,8 @@ var Space = class {
 $('.info').tooltip({html: true});
 var Space = new Space();
 function start(){
+  initstart();
+  initstart();
   SunM = parseInt($("#m1").val());
   EarthM = parseInt($("#m2").val());
   LocateXdt[0] = parseInt($("#sx").val());
@@ -116,7 +119,6 @@ function start(){
     Space.Position();
     Space.Move();
     Space.Text();
-    Space.i=0;
     AX.shift();
     AY.shift();
     F.shift();
@@ -129,10 +131,28 @@ function start(){
 
 }
 
+function initstart() {
+  Space.Accel();
+  Space.Velocity();
+  Space.Position();
+  Space.Move();
+  Space.Text();
+  Space.i++;
+}
+
 $(window).resize(function(){
   var initInfo = {
-    'left' : parseInt($("#sun").css("left").replace(/[^-\d\.]/g, '')),
-    'top' : parseInt($("#sun").css("top").replace(/[^-\d\.]/g, '')) + 30
+    'left' : $("#sun").position().left,
+    'top' : $("#sun").position().top + 30
   };
+  $("#sun2").css("top", initInfo['top']-30);
+  $("#sun2").css("left", initInfo['left']);
   initFunction();
 });
+
+function getsafari(){
+  initInfo = {
+    'left' : $("#sun").position().left,
+    'top' : $("#sun").position().top + 30
+  };
+}

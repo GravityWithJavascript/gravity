@@ -1,11 +1,18 @@
-#wrap{
-  min-height: 100vh;
-  min-width: 100vw;
-  max-width: 100vw;
+body{
+  height: auto;
+  width: auto;
   background-color: black;
 }
 
-#sun{
+#wrap{
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+#sun, #sun2{
   /*230 219*/
   position: absolute;
   width: 76px;
@@ -35,4 +42,43 @@
   background-color: white;
   width: 500px;
   padding: 30px;
+}
+
+#sun2{
+  display: none;
+  opacity: 0.3;
+}
+
+#help{
+  z-index: 1000002;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+}
+
+#help *{
+  color: white;
+  text-align: center;
+}
+
+#help > .container{
+  /*width: 100%;
+  height: 100%;*/
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+#set{
+  background-color: black;
+  border: 1px solid white;
+}
+
+#set *{
+  color: white;
+}
+
+#set input{
+  background-color: black;
 }
