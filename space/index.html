@@ -19,8 +19,11 @@
 
   </head>
   <body>
+    <div id="start">
+      <p onclick="start();">START</p>
+    </div>
 
-    <div id="help" class="container">
+    <div id="help" class="container" style="display:none">
       <div class="container align-middle">
         <h1>HELP</h1>
         <p>태양을 기준으로 지구가 회전합니다.</p>
@@ -32,16 +35,18 @@
         <p onclick="closePopup();">닫기</p>
       </div>
     </div>
-    <div id="info">
-      <p>Acceleration (x) : <span class="ax"></span>m/s<sup>2</sup></p>
+    <div id="info" style="">
+      <!-- <p>Acceleration (x) : <span class="ax"></span>m/s<sup>2</sup></p>
       <p>Acceleration (y) : <span class="ay"></span>m/s<sup>2</sup></p>
       <p>Velocity (x) : <span class="vx"></span>m/s</p>
       <p>Velocity (y) : <span class="vy"></span>m/s</p>
       <p>Location (x) : <span class="sx"></span>m</p>
-      <p>Location (y) : <span class="sy"></span>m</p>
+      <p>Location (y) : <span class="sy"></span>m</p> -->
+      <p>실제 시간(YYYY/MM/DD HH) : <span id="year"></span>/<span id="month"></span>/<span id="day"></span>
+      <span id="hour"></span></p>
     </div>
 
-    <div id="set">
+    <div id="set" style="display:none">
       <form>
 
         <div class="form-group">
@@ -87,16 +92,17 @@
 
     <div id="wrap">
       <!-- 1,391,400km -->
-      <img data-toggle="tooltip" class="info" id="sun" src="img/sun.jpeg" title="Sun">
-      <img data-toggle="tooltip" class="info" id="sun2" src="img/sun.jpeg">
+      <img data-toggle="tooltip" class="info" id="sun" src="img/sun.png" title="Sun">
+      <img data-toggle="tooltip" class="info" id="sun2" src="img/sun.png">
       <!-- 12,742km -->
       <img data-toggle="tooltip" class="info" id="earth" src="img/earth.jpg" title="Earth">
+      <img data-toggle="tooltip" class="info" id="moon" src="img/moon.png" title="Moon">
     </div>
 
-
-
+    <script src="gravity.class.js"></script>
     <script src="gravity.js"></script>
     <script src="reactive.js"></script>
+    <script src="etc.js"></script>
 
   </body>
 </html>

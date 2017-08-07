@@ -26,14 +26,36 @@ body{
   position: absolute;
 }
 
+#moon{
+  width: 10px;
+  position: absolute;
+}
+
 #info{
   width: 500px;
   position: fixed;
   color: white;
   background-color: black;
-  top:0;
-  border: 1px solid white;
+  bottom :5px;
+  left: 5px;
+  /*border: 1px solid white;*/
   z-index: 1000;
+
+}
+
+#start>p{
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 70px;
+  margin:0;
+  margin-top:calc(50% - 70px);
+  text-align: center;
+  transition: 1s all;
+}
+
+#start>p:hover{
+  color: lightblue;
 }
 
 #set{
@@ -49,7 +71,7 @@ body{
   opacity: 0.3;
 }
 
-#help{
+#help, #start{
   z-index: 1000002;
   position: fixed;
   width: 100vw;
