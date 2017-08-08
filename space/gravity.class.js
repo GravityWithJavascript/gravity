@@ -1,3 +1,5 @@
+// default unit : Force - Newton, weight - kg, distance - m, scale - 1:N,
+// velocity - m/s acceleration - m/s^2
 var G = 6.67384 * Math.pow(10, -11);
 var EarthM = 5.9742 * Math.pow(10 , 24);
 var EarthR = 6.37 * Math.pow(10, 6);
@@ -5,10 +7,22 @@ var SunM = 1.989 * Math.pow(10,30);
 var MoonM = 7.36 * Math.pow(10,22);
 var scale = 500000000;
 var defaultSize = { // 이미지 사이즈
+  "#sun":$("#sun").width()/2,
   "#earth":$("#earth").width()/2,
   "#moon":$("#moon").width()/2
 };
 var defaultData = {
+  "#sun":{
+    "LocateXdt":0,
+    "LocateYdt":0,
+    "distance":0,
+    'VX':0,
+    "VY":0,
+    "F":0,
+    "AX":0,
+    "AY":0,
+    "preset":0
+  },
   "#earth":{
     "LocateXdt":147500000000,
     "LocateYdt":0,

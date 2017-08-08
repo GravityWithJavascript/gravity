@@ -1,4 +1,5 @@
 // Copyright gdb.kr Co. 2017
+// version 2.0 class
 var SET = {
   "Earth" : new Space("#sun","#earth"),
   "Moon" : new Space("#earth","#moon")
@@ -15,7 +16,6 @@ function setSize() {
 setSize();
 function resizeEvent(){
   for (var [key, value] of Object.entries(SET)) {
-    console.log(key + " : " +(defaultData[value.obj2].preset*value.LocateXdt[value.i]/Math.sqrt(value.distance[value.i])));
     $(value.obj2).css({
       top:value.initInfo.top+value.LocateYdt[value.i]/scale-defaultSize[value.obj2]+
       (defaultData[value.obj2].preset*value.LocateYdt[value.i]/Math.sqrt(value.distance[value.i])),
@@ -25,10 +25,11 @@ function resizeEvent(){
   }
 }
 
-
-
 function start(){
   for (var [key, value] of Object.entries(SET)) {
+    if(!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){
+      initstart(value);      initstart(value);
+    }
     value.start();
   }
 
@@ -41,20 +42,3 @@ function initstart(obj) {
   obj.Move();
   obj.i++;
 }
-
-// $(window).resize(function(){
-//   Earth.initInfo = {
-//     'left' : $("#sun").position().left,
-//     'top' : $("#sun").position().top + 30
-//   };
-//   $("#sun2").css("top", Earth.initInfo['top']-30);
-//   $("#sun2").css("left", Earth.initInfo['left']);
-//   initFunction();
-// });
-//
-// function getsafari(){
-//   Earth.initInfo = {
-//     'left' : $("#sun").position().left,
-//     'top' : $("#sun").position().top + 30
-//   };
-// }

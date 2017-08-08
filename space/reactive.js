@@ -8,6 +8,7 @@
 //   }
 // });
 //
+
 // var isdrag = false
 // $("#sun").on({
 //   mousedown: function(event) {
@@ -30,17 +31,17 @@
 //   //mouse event added, JUL 28 2017
 // });
 //
-function closePopup() {
-  if($( "input[name$='reopen']" ).prop('checked')){
-    localStorage.setItem("reopen", "false");
-  }
-
-  $("#help").animate({
-    opacity:0
-  }, 300, function(){
-    $("#help").hide();
-  });
-}
+// function closePopup() {
+//   if($( "input[name$='reopen']" ).prop('checked')){
+//     localStorage.setItem("reopen", "false");
+//   }
+//
+//   $("#help").animate({
+//     opacity:0
+//   }, 300, function(){
+//     $("#help").hide();
+//   });
+// }
 //
 // function checksize(x,y) {
 //   wx = $(document).width();
@@ -56,3 +57,35 @@ function closePopup() {
 //     $("#wrap").css('width',wx - x);
 //   }
 // }
+
+$(window).bind('mousewheel', function(e){
+  if(e.originalEvent.wheelDelta /120 > 0) {
+    $("#wrap").animate({'zoom':$("#wrap").css('zoom')*0.99},1);
+    setSize();
+  }
+  else{
+    if($("#wrap").css('zoom') < 1){
+      $("#wrap").animate({'zoom':$("#wrap").css('zoom')*1.01},1);
+      setSize();
+    }
+  }
+});
+
+$(window).resize(function(){
+  setSize();
+});
+
+var lastY;
+$(window).bind('touchmove', function (e){
+     var currentY = e.originalEvent.touches[0].clientY;
+     if(currentY > lastY){
+       if($("#wrap").css('zoom') < 1){
+         $("#wrap").animate({'zoom':$("#wrap").css('zoom')*1.01},1);
+         setSize();
+       }
+     }else if(currentY < lastY){
+       $("#wrap").animate({'zoom':$("#wrap").css('zoom')*0.99},1);
+       setSize();
+     }
+     lastY = currentY;
+});
