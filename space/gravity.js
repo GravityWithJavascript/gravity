@@ -1,17 +1,19 @@
 // Copyright gdb.kr Co. 2017
 // version 2.0 class
 var SET = {
+  "Mercurius" : new Space("#sun","#merc"),
+  "Venus" : new Space("#sun","#venus"),
   "Earth" : new Space("#sun","#earth"),
   "Moon" : new Space("#earth","#moon")
 };
 
 function setSize() {
   for (var [key, value] of Object.entries(SET)){
+    console.log(key);
     value.initInfo.left = $(value.obj1).position().left + $(value.obj1).width()/2;
     value.initInfo.top = $(value.obj1).position().top + $(value.obj1).height()/2;
-    resizeEvent();
   }
-
+  resizeEvent();
 }
 setSize();
 function resizeEvent(){

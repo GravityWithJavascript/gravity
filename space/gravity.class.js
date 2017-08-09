@@ -9,6 +9,8 @@ var scale = 500000000;
 var defaultSize = { // 이미지 사이즈
   "#sun":$("#sun").width()/2,
   "#earth":$("#earth").width()/2,
+  "#venus":$("#venus").width()/2,
+  "#merc":$("#merc").width()/2,
   "#moon":$("#moon").width()/2
 };
 var defaultData = {
@@ -24,7 +26,7 @@ var defaultData = {
     "preset":0
   },
   "#earth":{
-    "LocateXdt":147500000000,
+    "LocateXdt":147098074000,
     "LocateYdt":0,
     "distance":2.175625e+22,
     'VX':0,
@@ -44,6 +46,28 @@ var defaultData = {
     "AX":G*EarthM/Math.pow(405696000,2)*405696000*-1,
     "AY":0,
     "preset":30
+  },
+  "#merc":{
+    "LocateXdt":46001272000,
+    "LocateYdt":0,
+    "distance":Math.pow(46001272000,2),
+    "VX":0,
+    "VY":58980,
+    "F":G*SunM/Math.pow(46001272000,2),
+    "AX":G*SunM/Math.pow(46001272000,2)*46001272000*-1,
+    "AY":0,
+    "preset":0
+  },
+  "#venus":{
+    "LocateXdt":108941849000,
+    "LocateYdt":0,
+    "distance":Math.pow(108941849000,2),
+    "VX":0,
+    "VY":34784,
+    "F":G*SunM/Math.pow(108941849000,2),
+    "AX":G*SunM/Math.pow(108941849000,2)*108941849000*-1,
+    "AY":0,
+    "preset":0
   }
 };
 var weight = {

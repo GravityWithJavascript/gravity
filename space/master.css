@@ -25,10 +25,19 @@ body{
   width: 30px;
   position: absolute;
 }
+#venus{
+  width: 20px;
+  position: absolute;
+}
 
 #moon{
   width: 10px;
   position: absolute;
+}
+
+#merc{
+  position: absolute;
+  width: 10px;
 }
 
 #info{
@@ -39,7 +48,6 @@ body{
   bottom :5px;
   left: 5px;
   z-index: 1000;
-
 }
 
 #start>p{
@@ -50,7 +58,7 @@ body{
   margin:0;
   margin-top:calc(50vh - 35px);
   text-align: center;
-  transition: 1s all;
+  transition: 1s color;
 }
 
 #start>p:hover{
