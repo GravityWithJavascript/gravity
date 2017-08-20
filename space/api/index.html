@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- bootstrap cdn -->
+
+    <!-- style -->
+    <link rel="stylesheet" href="master.css">
+    <!-- style -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>gdb.kr | gravity simulator</title>
+
+  </head>
+  <body>
+    <div id="start" style="display:none">
+
+      <p onclick="start();">START</p>
+    </div>
+
+    <div id="info" style="">
+      <p>실제 시간(YYYY/MM/DD HH) : <span id="year"></span>/<span id="month"></span>/<span id="day"></span>
+      <span id="hour"></span></p>
+    </div>
+
+    <div id="wrap">
+      <input type="file" multiple id="upload">
+    </div>
+
+    <script src="gravity.class.js"></script>
+    <script src="gravity.js"></script>
+    <script src="custom.js" charset="utf-8"></script>
+    <script src="reactive.js"></script>
+    <script src="etc.js"></script>
+
+  </body>
+</html>

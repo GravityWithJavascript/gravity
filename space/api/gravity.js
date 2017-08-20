@@ -9,6 +9,7 @@ var SET = {
 
 function setSize() {
   for (var [key, value] of Object.entries(SET)){
+    console.log(key);
     value.initInfo.left = $(value.obj1).position().left + $(value.obj1).width()/2;
     value.initInfo.top = $(value.obj1).position().top + $(value.obj1).height()/2;
   }
@@ -28,8 +29,7 @@ function resizeEvent(){
 
 function start(){
   for (var [key, value] of Object.entries(SET)) {
-    if(!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform || !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/))){
-      console.log(key);
+    if(!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){
       initstart(value);      initstart(value);
     }
     value.start();
